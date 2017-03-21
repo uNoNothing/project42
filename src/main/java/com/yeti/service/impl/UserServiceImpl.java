@@ -1,4 +1,4 @@
-package com.yeti.service.impl;
+/*package com.yeti.service.impl;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import com.google.gson.Gson;
 import com.yeti.dto.Message;
 import com.yeti.dto.UserDTO;
 import com.yeti.marshaller.UserMarshaller;
-import com.yeti.model.User;
-import com.yeti.repository.UserRepository;
+import com.yeti.model.Users;
+import com.yeti.repository.UsersDetailsRepository;
 import com.yeti.service.UserService;
 import com.yeti.unmarsharller.UserUnmarshaller;
 
@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
 	@Autowired
-	private UserRepository userRepository;
+	private UsersDetailsRepository userRepository;
 	private UserMarshaller userMarshaller = new UserMarshaller();
 	private UserUnmarshaller userUnmarshaller = new UserUnmarshaller();
 
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
 			logger.debug(returnMessage);
 			message.setMessage(returnMessage);
 		} else {
-			User user = userUnmarshaller.unmarshall(userDTO);
+			Users user = userUnmarshaller.unmarshall(userDTO);
 			userRepository.updateByUsername(user.getUsername(), user.getPassword(), user.getFirstname(),
 					user.getLastname(), user.getEmail());
 			message.setError(true);
@@ -77,8 +77,8 @@ public class UserServiceImpl implements UserService {
 		Message message = new Message();
 		String returnMessage = "";
 
-		User user = userUnmarshaller.unmarshall(userDTO);
-		User savedUser = userRepository.save(user);
+		Users user = userUnmarshaller.unmarshall(userDTO);
+		Users savedUser = userRepository.save(user);
 
 		returnMessage = "User: " + user.getUsername() + " saved in database";
 		logger.debug(returnMessage);
@@ -113,3 +113,4 @@ public class UserServiceImpl implements UserService {
 	}
 
 }
+*/

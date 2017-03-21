@@ -1,12 +1,12 @@
-package com.yeti.unmarsharller;
+/*package com.yeti.unmarsharller;
 
 import com.yeti.dto.UserDTO;
-import com.yeti.model.User;
+import com.yeti.model.Users;
 
 public class UserUnmarshaller {
 
-	public User unmarshall(UserDTO userDTO) {
-		User user = new User();
+	public Users unmarshall(UserDTO userDTO) {
+		Users user = new Users();
 
 		user.setUsername(userDTO.getUsername());
 		user.setPassword(userDTO.getPassword());
@@ -17,3 +17,4 @@ public class UserUnmarshaller {
 		return user;
 	}
 }
+*/

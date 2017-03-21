@@ -1,24 +1,24 @@
-package com.yeti.marshaller;
+/*package com.yeti.marshaller;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import com.yeti.dto.UserDTO;
-import com.yeti.model.User;
+import com.yeti.model.Users;
 
 public class UserMarshaller {
 
-	public List<UserDTO> marshall(Iterable<User> userIterable) {
+	public List<UserDTO> marshall(Iterable<Users> userIterable) {
 		List<UserDTO> userDTOList = new ArrayList<UserDTO>();
-		for (Iterator<User> currentIterator = userIterable.iterator(); currentIterator.hasNext();) {
+		for (Iterator<Users> currentIterator = userIterable.iterator(); currentIterator.hasNext();) {
 			userDTOList.add(marshall(currentIterator.next()));
 		}
 
 		return userDTOList;
 	}
 
-	public UserDTO marshall(User user) {
+	public UserDTO marshall(Users user) {
 		UserDTO userDTO = new UserDTO();
 
 		if (user != null) {
@@ -35,3 +35,4 @@ public class UserMarshaller {
 	}
 
 }
+*/

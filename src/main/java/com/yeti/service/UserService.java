@@ -1,4 +1,4 @@
-package com.yeti.service;
+/*package com.yeti.service;
 
 import java.util.List;
 
@@ -18,3 +18,4 @@ public interface UserService {
 	public Message deleteUser(String username);
 
 }
+*/
