@@ -1,6 +1,8 @@
+'use strict';
+
 var constants = angular.module('constants', []);
 
-constants.constant('CONSTANTS', {
-	"API_USER_AUTHENTICATION" : "api/userauthentication",
+constants.constant('CONST', {
+	"API_USER_AUTH" : "api/userauth",
 	"API_USER" : "api/user/"
 });

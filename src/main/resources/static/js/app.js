@@ -1,4 +1,6 @@
-var myApp = angular.module('myApp', ['ngRoute', 'sharing', 'auth', 'home', 'navigation']);
+'use strict';
+
+var myApp = angular.module('myApp', ['ngRoute', 'share', 'auth', 'home', 'nav']);
 
 myApp.config(['$locationProvider', '$routeProvider', '$httpProvider', function($locationProvider, $routeProvider, $httpProvider) {
 

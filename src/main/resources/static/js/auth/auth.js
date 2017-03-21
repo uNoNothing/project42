@@ -1,5 +1,5 @@
-var auth = angular.module('auth', ['sharing', 'constants']);
-auth.factory('auth', ['$rootScope', '$http', '$location', 'currentUser', 'CONSTANTS', function($rootScope, $http, $location, currentUser, CONSTANTS) {
+var auth = angular.module('auth', ['share', 'constants']);
+auth.factory('auth', ['$rootScope', '$http', '$location', 'currentUser', 'CONST', function($rootScope, $http, $location, currentUser, CONST) {
 
 	var auth = {
 		authenticated : false,
@@ -14,7 +14,7 @@ auth.factory('auth', ['$rootScope', '$http', '$location', 'currentUser', 'CONSTA
 				authorization : "Basic " + btoa(credentials.username + ":" + credentials.password)
 			} : {};
 
-			$http.get(CONSTANTS.API_USER_AUTHENTICATION, {
+			$http.get(CONST.API_USER_AUTH, {
 				headers : headers
 			}).then(function(response) {
 				if (response.data.name) {
@@ -48,6 +48,8 @@ auth.factory('auth', ['$rootScope', '$http', '$location', 'currentUser', 'CONSTA
 			auth.loginPath = loginPath;
 			auth.logoutPath = logoutPath;
 
+			console.log('Checking if already authenticated');
+			
 			auth.authenticate({}, function(authenticated) {
 				if (authenticated) {
 					$location.path(auth.path);

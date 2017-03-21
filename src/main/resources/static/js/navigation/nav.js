@@ -1,6 +1,8 @@
-var navigation = angular.module('navigation', ['auth']);
+'use strict';
 
-navigation.controller('NavCtrl', ['auth', function(auth) {
+var nav = angular.module('nav', ['auth']);
+
+nav.controller('NavCtrl', ['auth', function(auth) {
 
 	var self = this;
 
