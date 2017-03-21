@@ -1,4 +1,5 @@
-angular.module('sharing', []).service('currentUser', function() {
+var sharing = angular.module('sharing', []);
+sharing.service('currentUser', function() {
 	var user;
 	return {
 		getUser : function() {

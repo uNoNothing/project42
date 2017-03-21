@@ -1,4 +1,5 @@
-angular.module('auth', ['sharing']).factory('auth', function($rootScope, $http, $location, currentUser) {
+var auth = angular.module('auth', ['sharing', 'constants']);
+auth.factory('auth', ['$rootScope', '$http', '$location', 'currentUser', 'CONSTANTS', function($rootScope, $http, $location, currentUser, CONSTANTS) {
 
 	var auth = {
 		authenticated : false,
@@ -13,7 +14,7 @@ angular.module('auth', ['sharing']).factory('auth', function($rootScope, $http, 
 				authorization : "Basic " + btoa(credentials.username + ":" + credentials.password)
 			} : {};
 
-			$http.get('api/userauthentication', {
+			$http.get(CONSTANTS.API_USER_AUTHENTICATION, {
 				headers : headers
 			}).then(function(response) {
 				if (response.data.name) {
@@ -70,4 +71,4 @@ angular.module('auth', ['sharing']).factory('auth', function($rootScope, $http, 
 	}
 
 	return auth;
-});
+}]);

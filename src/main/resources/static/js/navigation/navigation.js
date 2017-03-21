@@ -1,4 +1,6 @@
-angular.module('navigation', ['auth']).controller('navigation', function(auth) {
+var navigation = angular.module('navigation', ['auth']);
+
+navigation.controller('NavCtrl', ['auth', function(auth) {
 
 	var self = this;
 
@@ -6,7 +8,7 @@ angular.module('navigation', ['auth']).controller('navigation', function(auth) {
 
 	self.authenticated = function() {
 		return auth.authenticated;
-	}
+	};
 
 	self.login = function() {
 		auth.authenticate(self.credentials, function(authenticated) {
@@ -17,11 +19,11 @@ angular.module('navigation', ['auth']).controller('navigation', function(auth) {
 				console.log("Login Failed")
 				self.error = true;
 			}
-		})
+		});
 	};
 
 	self.logout = function() {
 		auth.clear();
-	}
+	};
 
-});
+}]);

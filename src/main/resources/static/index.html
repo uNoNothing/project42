@@ -12,7 +12,7 @@
 </head>
 
 <body ng-app="myApp" ng-cloak class="ng-cloak">
-	<div ng-controller="navigation as nav" class="container">
+	<div ng-controller="NavCtrl as nav" class="container">
 		<ul class="nav nav-pills" role="tablist">
 			<li class="active"><a href="/">Home</a></li>
 			<li ng-show="!nav.authenticated()"><a href="/login">Login</a></li>
@@ -20,15 +20,22 @@
 				ng-click="nav.logout()">Logout</a></li>
 		</ul>
 	</div>
-	
+
 	<div ng-view class="container"></div>
-	
+
 	<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+
+	<script src="js/constants.js" type="text/javascript"></script>
 	<script src="js/sharing.js" type="text/javascript"></script>
+
 	<script src="js/auth/auth.js" type="text/javascript"></script>
 	<script src="js/navigation/navigation.js" type="text/javascript"></script>
+
 	<script src="js/home/home.js" type="text/javascript"></script>
-	<script src="js/myApp.js" type="text/javascript"></script>
+	<!-- 	<script src="js/home/home_service.js" type="text/javascript"></script>
+	<script src="js/home/home_controller.js" type="text/javascript"></script> -->
+
+	<script src="js/app.js" type="text/javascript"></script>
 
 </body>
 </html>

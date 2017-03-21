@@ -20,10 +20,10 @@ public class UsersDetailsController extends BaseController {
 	@Autowired
 	private UsersDetailsService usersDetailsService;
 
-	@RequestMapping(value = "/read/user/{username}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/{username}", method = RequestMethod.GET)
 	public UsersDetailsDTO readUser(@PathVariable String username) {
 		logger.info("Get users details from database for user: " + username);
-		logger.debug("/api/read/user/" + username + " GET");
+		logger.debug("/api/user/" + username + " GET");
 		return usersDetailsService.readUser(username);
 	}
 	/*
